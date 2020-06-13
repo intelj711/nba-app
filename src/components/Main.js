@@ -1,13 +1,13 @@
 import React from 'react';
-import nba from 'nba';
+// import nba from 'nba';
+import nba from '../nba-client.js';
 import { Profile } from './Profile';
 import { DataViewContainer } from './DataViewContainer';
 import {SearchBar} from './SearchBar'
 
 export class Main extends React.Component {
     state = {
-        playerId: nba.findPlayer('Stephen Curry').playerId,
-        playerInfo: {}
+        playerInfo: {},
     }
 
     handleSelectPlayer = (name) => {
@@ -28,7 +28,6 @@ export class Main extends React.Component {
             });
         });
     }
-
     render() {
         return (
             <div className="main">
@@ -40,5 +39,4 @@ export class Main extends React.Component {
             </div>
         );
     }
-
 }

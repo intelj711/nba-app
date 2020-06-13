@@ -1,6 +1,7 @@
 import React from 'react';
-import nba from 'nba';
-import { AutoComplete, Input, Icon} from 'antd';
+// import nba from 'nba';
+import nba from '../nba-client.js';
+import { AutoComplete, Input, Icon, Avatar } from 'antd';
 import { PROFILE_PIC_URL_PREFIX } from '../constants';
 
 const Option = AutoComplete.Option;
@@ -24,6 +25,7 @@ export class SearchBar extends React.Component {
     }
 
     render() {
+        window.nba = nba;
         const { dataSource } = this.state;
         const options = dataSource.map(player => (
             <Option key={player.fullName} value={player.fullName} className="player-option">
